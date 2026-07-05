@@ -676,7 +676,9 @@ export default function MusicVideos() {
           {thumbnails.map((thumb, i) => (
             <div
               key={i}
-              ref={(el) => (thumbRefs.current[i] = el)}
+              ref={(el) => {
+                thumbRefs.current[i] = el;
+              }}
               className="video-thumb relative rounded-xl overflow-hidden cursor-pointer group flex-1"
               style={{ aspectRatio: '16/9', transformStyle: 'preserve-3d' }}
             >

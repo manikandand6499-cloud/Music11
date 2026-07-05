@@ -594,7 +594,9 @@ export default function LatestReleases() {
         {releases.map((release, i) => (
           <div
             key={i}
-            ref={(el) => (cardRefs.current[i] = el)}
+            ref={(el) => {
+              cardRefs.current[i] = el;
+            }}
             className="release-card flex-shrink-0 snap-start group cursor-pointer"
             style={
               {
@@ -605,11 +607,15 @@ export default function LatestReleases() {
             }
           >
             <div
-              ref={(el) => (coverWrapRefs.current[i] = el)}
+              ref={(el) => {
+                coverWrapRefs.current[i] = el;
+              }}
               className="relative aspect-square rounded-xl overflow-hidden"
             >
               <img
-                ref={(el) => (coverRefs.current[i] = el)}
+                ref={(el) => {
+                  coverRefs.current[i] = el;
+                }}
                 src={release.image}
                 alt={release.title}
                 className="w-full h-full object-cover"
@@ -617,16 +623,22 @@ export default function LatestReleases() {
             </div>
             <div className="mt-3">
               <h3
-                ref={(el) => (titleRefs.current[i] = el)}
+                ref={(el) => {
+                  titleRefs.current[i] = el;
+                }}
                 className="font-display text-[15px] font-medium text-white"
               >
                 {release.title}
               </h3>
-              <p ref={(el) => (artistRefs.current[i] = el)} className="text-[13px] text-[#B8B8B8] mt-1">
+              <p ref={(el) => {
+                artistRefs.current[i] = el;
+              }} className="text-[13px] text-[#B8B8B8] mt-1">
                 {release.artist}
               </p>
               <span
-                ref={(el) => (badgeRefs.current[i] = el)}
+                ref={(el) => {
+                  badgeRefs.current[i] = el;
+                }}
                 className="inline-block mt-2 px-2.5 py-1 rounded-full border border-white/[0.08] text-[11px] text-[#B8B8B8]"
               >
                 {release.genre}

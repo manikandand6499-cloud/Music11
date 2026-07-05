@@ -618,7 +618,9 @@ export default function PremiumMerch() {
           {products.map((product, i) => (
             <div
               key={i}
-              ref={(el) => (cardRefs.current[i] = el)}
+              ref={(el) => {
+                cardRefs.current[i] = el;
+              }}
               className="merch-card group"
               style={
                 {
